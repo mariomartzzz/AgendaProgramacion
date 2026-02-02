@@ -3,15 +3,18 @@ package Agenda;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import depurador.Depurador;
+
 public class Agenda {
-	
-	
-	static Scanner s=new Scanner (System.in);
-	
-	private ArrayList <Contacto> contacto;
+	private ArrayList <Contacto> contactos;
 	
 	public Agenda() {
-		ArrayList <Contacto> contacto=new ArrayList<>();
+		Depurador.trazar("Se crea la lista de contactos");
+		//Se crea la lista de contactos
+		contactos=new ArrayList<Contacto>();
+		Contacto c=new Contacto("Carlos");
+		c.addTelefono("Casa", 0034, 985823575);
+		
 	}
 	
 }
