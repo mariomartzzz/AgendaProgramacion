@@ -2,18 +2,39 @@ package Agenda;
 
 public class Contacto {
 
-		Telefono telefono;
-		String nombre;
-		String apellidos;
+	private class Telefono{
 		
-	public Contacto(String nombre, String apellidos, Telefono telefono) {
+		private int prefijo;
+		private int numero;
 		
-	}	
+		private Telefono(int prefijo, int numero) {
+			this.prefijo=prefijo;
+			this.numero=numero;
+		}
 		
-	public void addContacto(String nombre,String apellidos,Telefono telefono) {
-		this.nombre=nombre;
-		this.apellidos=apellidos;
-		this.telefono=telefono;
+		private void setPrefijo(int prefijo) {
+			this.prefijo=prefijo;
+		}
+		
+		private int getPrefijo() {
+			return prefijo;
+		}
+		
+		private void setNumero(int numero) {
+			this.numero=numero;
+		}
+		
+		private int getNumero() {
+			return numero;
+		}
+		
+		public String toString() {
+			String prefijo=Integer.toString(this.prefijo);
+			String numero=Integer.toString(this.numero);
+			return prefijo+numero;
+		}
 	}
-
+	
+	
+	
 }
