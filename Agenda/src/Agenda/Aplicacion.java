@@ -1,5 +1,7 @@
 package Agenda;
 
+import depurador.Depurador;
+
 public class Aplicacion {
 	
 	public Aplicacion() {
@@ -10,7 +12,7 @@ public class Aplicacion {
 		 * Agenda.consultar(nombre)
 		 * Agenda.revisar [toda la agenda]
 		 */
-		
+		Depurador.trazar("Hola");
 	}
 	
 	public static void main(String[] args) {
