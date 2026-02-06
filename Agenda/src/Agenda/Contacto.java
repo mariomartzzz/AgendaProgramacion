@@ -50,6 +50,7 @@ public class Contacto {
 	/**
 	 * HashMap tiene la forma de una tabla
 	 */
+	
 	private HashMap <String,Telefono>telefonos;
 	private HashMap <String, String>emails; 
 	
@@ -76,6 +77,10 @@ public class Contacto {
 		resultado+="\n"+ " Teléfono "+telefonos.toString();
 		resultado+="\n"+" email "+email;
 		return resultado;
+	}
+	
+	public void buscarContacto() {
+		
 	}
 	
 }
