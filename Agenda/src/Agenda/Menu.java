@@ -1,9 +1,8 @@
 package Agenda;
 
 import java.util.Scanner;
-
 public class Menu {
-
+	Agenda a=new Agenda();
 	static Scanner s=new Scanner (System.in);
 	public static void mostrarMenu() {
 	int opcion = -1;
@@ -20,15 +19,7 @@ public class Menu {
 		
 			switch (opcion) {
 			case 1:
-				System.out.println("Introduce el nombre del contacto:");
-				String nombre=s.next();
-				Contacto c=new Contacto(nombre);
-				System.out.println("Introduce el prefijo del numero del contacto:");
-				int prefijo=s.nextInt();
-				System.out.println("Introduce el número de teléfono del contacto:");
-				int numero=s.nextInt();
-				c.addTelefono("", prefijo, numero);
-				System.out.println(c.toString());
+				Agenda.agregarContacto();
 				break;
 			case 2:
 				break;
@@ -38,6 +29,7 @@ public class Menu {
 			case 4:
 				break;
 			default:
+				break;
 				
 			}
 		

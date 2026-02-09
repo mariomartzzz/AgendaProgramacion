@@ -3,7 +3,7 @@ package Agenda;
 import java.util.HashMap;
 import depurador.Depurador;
 
-public class Contacto {
+public class Contacto  {
 	/**
 	 * Clase anidada 
 	 */
@@ -11,15 +11,17 @@ public class Contacto {
 		
 		private int prefijo;
 		private int numero;
+		private String descripcion;
 		
 		/**
 		 * Construstor de los teléfonos que pueda tener el contacto
 		 * @param prefijo depende de la provincia
 		 * @param numero numero de telefono
 		 */
-		private Telefono(int prefijo, int numero) {
+		private Telefono(String descripcion ,int prefijo, int numero) {
 			this.prefijo=prefijo;
 			this.numero=numero;
+			this.descripcion=descripcion;
 		}
 		
 		private void setPrefijo(int prefijo) {
@@ -37,11 +39,17 @@ public class Contacto {
 		private int getNumero() {
 			return numero;
 		}
+		private String getDescripcion() {
+			return descripcion;
+		}
+		private void setDescripcion(String descripcion) {
+			this.descripcion=descripcion;
+		}
 		
 		public String toString() {
 			String prefijo=Integer.toString(this.prefijo);
 			String numero=Integer.toString(this.numero);
-			return prefijo+numero;
+			return prefijo+" "+numero;
 		}
 	}
 	
@@ -51,7 +59,7 @@ public class Contacto {
 	 * HashMap tiene la forma de una tabla
 	 */
 	
-	private HashMap <String,Telefono>telefonos;
+	private static HashMap <String,Telefono>telefonos;
 	private HashMap <String, String>emails; 
 	
 	/**
@@ -67,7 +75,7 @@ public class Contacto {
 	}
 	public void addTelefono(String descripcion,int prefijo, int numero) {
 		//descripcion.toUpperCase pone descripcion el mayus para evitar confusiones
-		telefonos.put(descripcion.toUpperCase(),new Telefono(prefijo, numero));
+		telefonos.put(descripcion.toUpperCase(),new Telefono(descripcion, prefijo, numero));
 		
 	}
 	
