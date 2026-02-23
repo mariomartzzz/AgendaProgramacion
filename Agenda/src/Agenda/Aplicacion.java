@@ -6,6 +6,7 @@ public class Aplicacion {
 	
 	public Aplicacion() {
 		Agenda agenda=new Agenda();
+		Cargador.cargarContactos();
 		Menu.mostrarMenu();
 	}
 	

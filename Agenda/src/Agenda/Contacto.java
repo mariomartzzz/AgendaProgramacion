@@ -3,109 +3,112 @@ package Agenda;
 import java.util.HashMap;
 import depurador.Depurador;
 
-public class Contacto  {
+public class Contacto {
 	/**
-	 * Clase anidada 
+	 * Clase anidada
 	 */
-	public class Telefono{
-		
+	public class Telefono {
+
 		private int prefijo;
 		private int numero;
 		private String descripcion;
-		
+
 		/**
 		 * Construstor de los teléfonos que pueda tener el contacto
+		 * 
 		 * @param prefijo depende de la provincia
-		 * @param numero numero de telefono
+		 * @param numero  numero de telefono
 		 */
-		private Telefono(String descripcion ,int prefijo, int numero) {
-			this.prefijo=prefijo;
-			this.numero=numero;
-			this.descripcion=descripcion;
+		private Telefono(String descripcion, int prefijo, int numero) {
+			this.prefijo = prefijo;
+			this.numero = numero;
+			this.descripcion = descripcion;
 		}
-		
+
 		private void setPrefijo(int prefijo) {
-			this.prefijo=prefijo;
+			this.prefijo = prefijo;
 		}
-		
+
 		private int getPrefijo() {
 			return prefijo;
 		}
-		
+
 		private void setNumero(int numero) {
-			this.numero=numero;
+			this.numero = numero;
 		}
-		
+
 		private int getNumero() {
 			return numero;
 		}
+
 		private String getDescripcion() {
 			return descripcion;
 		}
+
 		private void setDescripcion(String descripcion) {
-			this.descripcion=descripcion;
+			this.descripcion = descripcion;
 		}
-		
+
 		public String toString() {
-			String prefijo=Integer.toString(this.prefijo);
-			String numero=Integer.toString(this.numero);
-			return prefijo+" "+numero;
+			String prefijo = Integer.toString(this.prefijo);
+			String numero = Integer.toString(this.numero);
+			return prefijo + " " + numero;
 		}
 	}
-		
-		
-	
-	private String nombre, apellidos, email,direccion;
-	
+
+	private String nombre, apellidos, email, direccion;
+
 	/**
 	 * HashMap tiene la forma de una tabla
 	 */
-	
-	private static HashMap <String,Telefono>telefonos;
-	private static HashMap <String, String>emails; 
-	
+
+	private HashMap<String, Telefono> telefonos;
+	private HashMap<String, String> emails;
+
 	/**
 	 * Constructor del contacto
+	 * 
 	 * @param nombre nombre del contacto
 	 */
-	public Contacto (String nombre) {
-		Depurador.trazar("Se crea el contacto con el nombre "+nombre);
-		this.nombre=nombre;
-		telefonos=new HashMap<String,Telefono>();
-		emails=new HashMap<String,String>();
-		
+	public Contacto(String nombre) {
+		Depurador.trazar("Se crea el contacto con el nombre " + nombre);
+		this.nombre = nombre;
+		telefonos = new HashMap<String, Telefono>();
+		emails = new HashMap<String, String>();
+
 	}
-	public void addTelefono(String descripcion,int prefijo, int numero) {
-		//descripcion.toUpperCase pone descripcion el mayus para evitar confusiones
-		telefonos.put(descripcion.toUpperCase(),new Telefono(descripcion, prefijo, numero));
-		
+
+	public void addTelefono(String descripcion, int prefijo, int numero) {
+		// descripcion.toUpperCase pone descripcion el mayus para evitar confusiones
+		telefonos.put(descripcion.toUpperCase(), new Telefono(descripcion, prefijo, numero));
+
 	}
-	
+
 	public String toString() {
-		String resultado="Contacto:";
-		resultado+="Nombre: "+nombre+"\n";
-		resultado+="Teléfono "+telefonos.toString()+"\n";
-		resultado+="email "+emails.toString()+"\n";
+		String resultado = "Contacto:";
+		resultado += "Nombre: " + nombre + "\n";
+		resultado += "Teléfono " + telefonos.toString() + "\n";
+		resultado += "email " + emails.toString() + "\n";
 		return resultado;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+
 	public void addEmail(String descripcion, String email) {
-		emails.put(descripcion,email);
+		emails.put(descripcion.toUpperCase(), email);
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
 }
-	
-

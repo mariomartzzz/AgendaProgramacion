@@ -17,28 +17,29 @@ public class Agenda {
 		contactos = new ArrayList<Contacto>();
 	}
 
-	public static void agregarContacto() {
+	public static void agregarContacto(String nombre) {
 
-		System.out.println("Introduce el nombre del contacto");
-		String c = s.next();
-		Contacto a = new Contacto(c);
-		System.out.println("Introduce la descripción del teléfono");
-		String d = s.next();
-		System.out.println("Introduce el prefijo del teléfono");
-		String p = s.next();
-		int prefijo = Integer.parseInt(p);
-		System.out.println("Introduce el número de teléfono");
-		String t = s.next();
-		int numero = Integer.parseInt(t);
-		System.out.println("Introduce la descripcion del email");
-		String d2 = s.next();
-		System.out.println("Introduce el email");
-		String e = s.next();
-		a.addEmail(d2, e);
-		a.addTelefono(d, prefijo, numero);
+		Contacto a = new Contacto(nombre);
+		
+		
 		contactos.add(a);
-		Depurador.trazar(c.toString());
-		System.out.println("Se ha agregado el contato " + c + " a la agenda.");
+		System.out.println("Se ha agregado el contato " + nombre + " a la agenda.");
+	}
+
+	public static void agregarTelefono (String nombre, String descripcion, int prefijo, int numero) {
+	
+		for(int i=0;i<contactos.size();i++) {
+			if(contactos.get(i).getNombre().equals(nombre))
+				contactos.get(i).addTelefono(descripcion, prefijo, numero);
+		}
+	}
+	
+	public static void agregarEmail(String nombre, String descripcion, String correo) {
+		
+		for(int i=0;i<contactos.size();i++) {
+			if(contactos.get(i).getNombre().equals(nombre))
+				contactos.get(i).addEmail(descripcion, correo);
+		}
 	}
 
 	public static String buscarContacto(String nombre) {
@@ -69,4 +70,6 @@ public class Agenda {
 				contactos.remove(i);
 		}
 	}
+
+
 }
