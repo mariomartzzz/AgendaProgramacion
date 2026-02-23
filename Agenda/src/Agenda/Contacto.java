@@ -52,25 +52,8 @@ public class Contacto  {
 			return prefijo+" "+numero;
 		}
 	}
-	
-	public class Email{
-		private String descripcion;
-		private String email;
 		
-		public String getEmail() {
-			return email;
-		}
-		public void setEmail(String email) {
-			this.email = email;
-		}
-		public String getDescripcion() {
-			return descripcion;
-		}
-		public void setDescripcion(String descripcion) {
-			this.descripcion = descripcion;
-		}
 		
-	}
 	
 	private String nombre, apellidos, email,direccion;
 	
@@ -79,7 +62,7 @@ public class Contacto  {
 	 */
 	
 	private static HashMap <String,Telefono>telefonos;
-	private HashMap <String, String>emails; 
+	private static HashMap <String, String>emails; 
 	
 	/**
 	 * Constructor del contacto
@@ -100,9 +83,9 @@ public class Contacto  {
 	
 	public String toString() {
 		String resultado="Contacto:";
-		resultado+="\n"+" Nombre: "+nombre;
-		resultado+="\n"+ " Teléfono "+telefonos.toString();
-		resultado+="\n"+" email "+email.toString();
+		resultado+="Nombre: "+nombre+"\n";
+		resultado+="Teléfono "+telefonos.toString()+"\n";
+		resultado+="email "+emails.toString()+"\n";
 		return resultado;
 	}
 	
@@ -114,10 +97,15 @@ public class Contacto  {
 	}
 	
 	public void addEmail(String descripcion, String email) {
-		emails.put(descripcion.toUpperCase(), email);
+		emails.put(descripcion,email);
 	}
 	
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }
 	
 
