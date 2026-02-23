@@ -53,6 +53,25 @@ public class Contacto  {
 		}
 	}
 	
+	public class Email{
+		private String descripcion;
+		private String email;
+		
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
+		}
+		public String getDescripcion() {
+			return descripcion;
+		}
+		public void setDescripcion(String descripcion) {
+			this.descripcion = descripcion;
+		}
+		
+	}
+	
 	private String nombre, apellidos, email,direccion;
 	
 	/**
@@ -83,13 +102,10 @@ public class Contacto  {
 		String resultado="Contacto:";
 		resultado+="\n"+" Nombre: "+nombre;
 		resultado+="\n"+ " Teléfono "+telefonos.toString();
-		resultado+="\n"+" email "+email;
+		resultado+="\n"+" email "+email.toString();
 		return resultado;
 	}
 	
-	public void buscarContacto() {
-		
-	}
 	public String getNombre() {
 		return nombre;
 	}
@@ -97,5 +113,11 @@ public class Contacto  {
 		this.nombre = nombre;
 	}
 	
+	public void addEmail(String descripcion, String email) {
+		emails.put(descripcion.toUpperCase(), email);
+	}
+	
 	
 }
+	
+

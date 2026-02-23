@@ -5,7 +5,7 @@ import depurador.Depurador;
 public class Aplicacion {
 	
 	public Aplicacion() {
-		
+		Agenda agenda=new Agenda();
 		Menu.mostrarMenu();
 	}
 	

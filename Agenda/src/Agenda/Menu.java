@@ -2,7 +2,6 @@ package Agenda;
 
 import java.util.Scanner;
 public class Menu {
-	Agenda a=new Agenda();
 	static Scanner s=new Scanner (System.in);
 	public static void mostrarMenu() {
 	int opcion = -1;
@@ -22,11 +21,15 @@ public class Menu {
 				Agenda.agregarContacto();
 				break;
 			case 2:
+				Agenda.borrarContacto();
 				break;
 			case 3:
-				Agenda.buscarContacto();
+				System.out.println("Introduce el nombre a buscar:");
+				String nombre=s.next();
+				System.out.println(Agenda.buscarContacto(nombre));
 				break;
 			case 4:
+				System.out.println(Agenda.consultarAgenda());
 				break;
 			default:
 				break;
